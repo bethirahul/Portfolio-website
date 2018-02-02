@@ -5,118 +5,188 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rahul's Portfolio</title>
         <style type="text/css" media="screen">
-            body {
+            body
+            {
                 font-family: Arial, Helvetica, sans-serif;
             }
-            .darkFont {
+            .darkFont
+            {
                 color: #2d3c49;
             }
-            .lightFont {
+            .lightFont
+            {
                 color: #7d97ad;
             }
+            h1, h2, h3, p, figure
+            {
+                margin:0;
+                padding:0;
+                border: 1px solid orange;
+            }
 
-            .totalPage {
+            .totalPage
+            {
                 display: grid;
                     grid-template-columns: minmax(1.5mm, auto) minmax(auto, 225mm) minmax(1.5mm, auto);
-                /*border: 1px solid red;*/
             }
-            .mainPage {
+            .mainPage
+            {
                 grid-column: 2/3;
                 background-color: #f7f7f7;
                 overflow: hidden;
                 display: grid;
-                    grid-template-rows: auto 1.5mm auto auto; /* Title, Seperator, Cover_Photo, Featured_Heading, Projects */ 
+                    grid-template-rows: auto 1.5mm; /* auto auto auto; /* Title, Seperator, Cover_Photo, Featured_Heading, Projects */ 
                     grid-gap: 4.5mm;
             }
-            .mainTitle {
+            header
+            {
                 display: grid;
                     grid-template-columns: minmax(45mm, 60mm) auto;
                     grid-template-rows: auto auto auto;
+                border: 1px solid yellow;
             }
-            .myPhoto {
+            .myPhoto
+            {
                 grid-row: 1/4;
             }
-            .myPhotoImage {
+            .alignImage
+            {
                 vertical-align: middle;
+            }
+            .myPhotoImage
+            {
                 padding-top: 3%;
-                /*justify-self: center;*/
                 width: 100%;
             }
-            .myName {
+            .myName
+            {
                 grid-row: 2;
-                font-size: 300%;
+                font-size: 225%;
                 padding-right: 3%;
-                /*justify-self: end;*/
                 text-align: right;
                 align-self: end;
             }
-            .nickName {
+            .nickName
+            {
                 grid-row: 3;
                 font-size: 150%;
                 padding-right: 3%;
                 padding-top: 2%;
                 padding-bottom: 2%;
-                /*justify-self: end;*/
                 text-align: right;
             }
-            .seperator {
+            .seperator
+            {
                 background-color: #7d97ad;
             }
-            .coverPhoto {
+            .coverPhoto
+            {
                 border: 1px solid green;
                 max-height: 60mm;
                 overflow: hidden;
             }
-            .coverPhotoImage {
-                /*min-width: 440px;*/
-                vertical-align: middle;
+            .coverPhotoImage
+            {
                 width: 100%;
-                /*max-width: 750px;*/
-                /*object-fit: contain;*/
-                /*border: 1px solid red;*/
             }
-            .featuredHeading {
+            .featuredHeading
+            {
+                font-weight: normal;
                 font-size: 175%;
                 padding-left: 1.5%;
-                /*background-color: #f7f7f7;*/
+            }
+            .projects
+            {
+                display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-gap: 2%;
+                border: 1px solid blue;
+            }
+            /*.project {
+                display: grid;
+                    grid-template-rows: auto auto auto;
+                    grid-gap: 1%;
                 border: 1px solid black;
             }
+            .project > div {
+                border: 1px solid red;
+            }
+            .projectPhoto {
+                max-width: 70mm;
+                justify-self: center;
+            }*/
+            .projectPhotoImage
+            {
+                width: 100%;
+            }
+            /*.projectName {
+                text-align: center;
+                font-size: 150%;
+            }
+            .projectLink {
+                text-align: center;
+                font-size: 120%;
+            }*/
         </style>
     </head>
     <body>
         <div class = "totalPage">
             <div class="mainPage">
-                <div class="mainTitle">
-                    <div class="myPhoto">
-                        <img class="myPhotoImage" src="images/myself.JPG" alt="My photo">
-                    </div>
-                    <div class="myName darkFont">
+                <header>
+                    <figure class="myPhoto">
+                        <img class="myPhotoImage alignImage" src="images/myself.JPG" alt="My photo">
+                    </figure>
+                    <h1 class="myName darkFont">
                         RAHUL BETHI
-                    </div>
-                    <div class="nickName darkFont">
+                    </h1>
+                    <p class="nickName darkFont">
                         FLANKER
-                    </div>
-                </div>
+                    </p>
+                </header>
                 <div class="seperator">
                 </div>
-                <div class="coverPhoto">
-                    <img class="coverPhotoImage" src="images/cover_photo.jpg" alt="Cover Photo">
-                </div>
-                <div class="featuredHeading lightFont">
+                <figure class="coverPhoto">
+                    <img class="coverPhotoImage alignImage" src="images/cover_photo.jpg" alt="Cover Photo">
+                </figure>
+                <h2 class="featuredHeading lightFont">
                     Featured Work
+                </h2>
+                <div class="projects">
+                    <div class="project">
+                        <figure class="projectPhoto">
+                            <img class="projectPhotoImage alignImage" src="images/Rube_Goldberg.PNG" alt="Project Image">
+                        </figure>
+                        <p class="projectName darkFont">
+                            Rube Goldberg in VR
+                        </p>
+                        <p class="projectLink darkFont">
+                            GitHub
+                        </p>
+                    </div>
+                    <div class="project">
+                        <figure class="projectPhoto">
+                            <img class="projectPhotoImage alignImage" src="images/Rube_Goldberg.PNG" alt="Project Image">
+                        </figure>
+                        <p class="projectName darkFont">
+                            Project 2
+                        </p>
+                        <p class="projectLink darkFont">
+                            GitHub
+                        </p>
+                    </div>
+                    <div class="project">
+                        <figure class="projectPhoto">
+                            <img class="projectPhotoImage alignImage" src="images/Rube_Goldberg.PNG" alt="Project Image">
+                        </figure>
+                        <p class="projectName darkFont">
+                            Project 3
+                        </p>
+                        <p class="projectLink darkFont">
+                            GitHub
+                        </p>
+                    </div>
                 </div>
             </div>
-            <!--
-            <img src="images/seperator.png">
-            <img src="images/coverPhoto.png">
-            <div class="projects">
-                <div>
-                    <img src="images/rubeGoldberg.png">
-                    <p>Rube Goldberg in VR</p>
-                    <a href="https://github.com/bethirahul/Rube-Goldberg-Game">GitHub link</a>
-                </div>
-            </div>
-            -->
         </div>
     </body>
 </html>
