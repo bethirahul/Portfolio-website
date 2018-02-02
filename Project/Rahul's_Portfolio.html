@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Rahul's Portfolio</title>
+        <style type="text/css" media="screen">
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .mainPage {
+                display: grid;
+                    grid-template-columns: minmax(5px, auto) minmax(440px, 750px) minmax(5px, auto);
+                border: 1px solid red;
+            }
+            /*.mainPage > div {
+                border: 1px solid black;
+            }*/
+            .mainTitle {
+                grid-column: 2/3;
+                background-color: #f7f7f7;
+                display: grid;
+                    grid-template-columns: 200px minmax(200px, auto);
+                    grid-template-rows: 118px 50px;
+            }
+            .myPhoto {
+                grid-row: 1/3;
+            }
+            .myPhotoImage {
+                width: 200px;
+            }
+            .myName {
+                font-size: 300%;
+                justify-self: end;
+                align-self: end;
+            }
+            .nickName {
+                font-size: 150%;
+                justify-self: end;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "mainPage">
+            <div class="mainTitle">
+                <div class="myPhoto">
+                    <img class="myPhotoImage" src="images/myself.JPG" alt="My photo">
+                </div>
+                <div class="myName">Rahul Bethi</div>
+                <div class="nickName">Flanker</div>
+            </div>
+            <!--
+            <img src="images/seperator.png">
+            <img src="images/coverPhoto.png">
+            <div class="projects">
+                <div>
+                    <img src="images/rubeGoldberg.png">
+                    <p>Rube Goldberg in VR</p>
+                    <a href="https://github.com/bethirahul/Rube-Goldberg-Game">GitHub link</a>
+                </div>
+            </div>
+            -->
+        </div>
+    </body>
+</html>
