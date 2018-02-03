@@ -5,63 +5,56 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rahul's Portfolio</title>
         <!--<link rel="stylesheet" href="design.css">-->
-        <style type="text/css" media="screen">
-            body { font-family: Arial, Helvetica, sans-serif; }
-            .darkFont  { color: #2d3c49; }
-            .lightFont { color: #7d97ad; }
-
-            h1, h2, h3, p, figure
-            {
+        <style media="screen">
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .dark-font {
+                color: #2d3c49;
+            }
+            .light-font {
+                color: #7d97ad;
+            }
+            h1, h2, h3, h4, p, figure {
                 margin:0;
                 padding:0;
                 /*border: 1px solid orange;*/
             }
-            img
-            {
+            img {
                 width: 100%;
                 vertical-align: middle;
             }
-
-            .totalPage
-            {
+            .total-page {
                 display: grid;
-                    grid-template-columns: auto minmax(auto, 225mm) auto;
+                grid-template-columns: auto minmax(auto, 225mm) auto;
             }
-            .sides
-            {
+            .sides {
                 background-color: #2d3c49;
             }
-            .mainPage
-            {
+            .main-page {
                 padding: 2%;
                 grid-column: 2/3;
                 background-color: #eeeeee;
             }
-            header
-            {
+            header {
                 display: grid;
-                    grid-template-columns: minmax(40mm, 50mm) auto;
-                    grid-template-rows: auto auto auto;
+                grid-template-columns: minmax(40mm, 50mm) auto;
+                grid-template-rows: auto auto auto;
             }
-            figure
-            {
+            figure {
                 text-align: center;
             }
-            .myPhoto
-            {
+            .my-photo {
                 grid-row: 1/4;
             }
-            .myName
-            {
+            .my-name {
                 grid-row: 2;
                 font-size: 225%;
                 padding-left: 5%;
                 padding-right: 3.5%;
                 text-align: right;
-                align-self: end;
             }
-            .nickName
-            {
+            .nick-name {
                 grid-row: 3;
                 font-size: 150%;
                 padding-left: 5%;
@@ -70,132 +63,167 @@
                 padding-bottom: 2mm;
                 text-align: right;
             }
-            .whiteSpace
-            {
+            .empty-space {
                 padding: 1.5mm;
             }
-            .seperator
-            {
+            .seperator {
                 padding: 0.66mm;
                 background-color: #7d97ad;
             }
-            .coverPhoto
-            {
+            .cover-photo {
                 max-height: 60mm;
                 overflow: hidden;
             }
-            .featuredHeading
-            {
+            .featured-heading {
                 font-weight: normal;
                 font-size: 175%;
                 padding-left: 1.5%;
-                padding-top: 4mm;
+                padding-top: 5mm;
                 /*padding-bottom: 2mm;*/
             }
-            .projects
-            {
+            .projects {
                 display:flex;
                 flex-wrap: wrap;
                 justify-content:space-around;
             }
-            .project
-            {
+            .project {
                 padding: 1%;
                 padding-top: 5mm;
                 flex-basis: 67mm;
             }
-            .projectImage
-            {
+            .project-image {
                 max-width: 100%;
             }
-            .projectName
-            {
+            .project-name {
                 padding-top: 1mm;
                 padding-bottom: 1mm;
                 font-weight: normal;
                 text-align: center;
                 font-size: 150%;
-                /*word-wrap: break-word;*/
                 word-wrap: break-word;
             }
-            .projectLink
-            {
+            .project-details {
+                padding-bottom: 1mm;
+                text-align: center;
+                word-wrap: break-word;
+                font-size: 95%
+            }
+            .project-link {
                 padding-bottom: 1mm;
                 text-align: center;
                 font-size: 90%;
             }
+            .my-links {
+                padding-top: 2mm;
+                font-size: 95%;
+            }
         </style>
     </head>
     <body>
-        <div class = "totalPage">
+        <div class = "total-page">
             <aside class="sides"></aside>
-            <main class="mainPage">
+            <main class="main-page">
                 <header>
-                    <figure class="myPhoto">
-                        <img src="images/myself.JPG" alt="My photo">
+                    <figure class="my-photo">
+                        <img src="img/myself.jpg" alt="My Photo">
                     </figure>
-                    <h1 class="myName darkFont">
+                    <h1 class="my-name dark-font">
                         RAHUL BETHI
                     </h1>
-                    <p class="nickName darkFont">
+                    <p class="nick-name dark-font">
                         FLANKER
                     </p>                
                 </header>
-                <div class="whiteSpace"></div>
+                <div class="empty-space"></div>
                 <div class="seperator"></div>
-                <div class="whiteSpace"></div>
-                <figure class="coverPhoto">
-                    <img src="images/cover_photo.jpg" alt="Cover Photo">
+                <div class="empty-space"></div>
+                <figure class="cover-photo">
+                    <img src="img/cover_photo.jpg" alt="Cover Photo">
                 </figure>
-                <h2 class="featuredHeading lightFont">
+                <h2 class="featured-heading light-font">
                     Featured Work
                 </h2>
                 <section class="projects">
                     <article class="project">
-                        <figure class="projectPhoto">
-                            <img class="projectImage" src="images/Rube_Goldberg.PNG" alt="Project Image">
+                        <figure class="project-photo">
+                            <img
+                                class="project-image"
+                                src="img/Rube_Goldberg.png"
+                                alt="Rube Goldberg Image">
                         </figure>
-                        <h3 class="projectName darkFont">
-                            Rube Goldberg in VR
+                        <h3 class="project-name dark-font">
+                            Rube Goldberg
                         </h3>
-                        <p class="projectLink darkFont">
-                            <a href="https://github.com/bethirahul/Rube-Goldberg-Game">https://github.com/bethirahul/Rube-Goldberg-Game</a>
+                        <details class="project-details dark-font">
+                            <p class="project-description dark-font">
+                                A Virtual Reality (VR) puzzle game (Oculus Rift) where the player has to through a ball to the goal by guiding through different objects placed appropriately.
+                            </p>
+                        </details>
+                        <p class="project-link dark-font">
+                            <a href="https://medium.com/@rahulbethi/rube-goldberg-game-in-vr-rahul-bethi-59c82583eef1">
+                                Medium post
+                            </a>
+                        </p>
+                        <p class="project-link dark-font">
+                            <a href="https://github.com/bethirahul/Rube-Goldberg-Game">
+                                GitHub link
+                            </a>
                         </p>
                     </article>
                     <article class="project">
-                        <figure class="projectPhoto">
-                            <img class="projectImage" src="images/Rube_Goldberg.PNG" alt="Project Image">
+                        <figure class="project-photo">
+                            <img
+                                class="project-image"
+                                src="img/pb.png"
+                                alt="Performance Bounceback Image">
                         </figure>
-                        <h3 class="projectName darkFont">
-                            Project 2 adfsdfgs
+                        <h3 class="project-name dark-font">
+                            Performance Bounceback
                         </h3>
-                        <p class="projectLink darkFont">
-                            GitHub link
+                        <details class="project-details dark-font">
+                            <p class="project-description dark-font">
+                                A VR puzzle game compatible with Oculus Rift. Throw the ball on trampolines to score within 1 minute.
+                            </p>
+                        </details>
+                        <p class="project-link dark-font">
+                            <a href="https://github.com/bethirahul/Performance-Bounceback">
+                                GitHub link
+                            </a>
                         </p>
                     </article>
                     <article class="project">
-                        <figure class="projectPhoto">
-                            <img class="projectImage" src="images/Rube_Goldberg.PNG" alt="Project Image">
-                        </figure>
-                        <h3 class="projectName darkFont">
-                            Project 3 sdfasdfdasfasdfsdfasfas
-                        </h3>
-                        <p class="projectLink darkFont">
-                            GitHub link
-                        </p>
-                    </article>
+                            <figure class="project-photo">
+                                <img
+                                    class="project-image"
+                                    src="img/pb.png"
+                                    alt="Performance Bounceback Image">
+                            </figure>
+                            <h3 class="project-name dark-font">
+                                Performance Bounceback
+                            </h3>
+                            <details class="project-details dark-font">
+                                <p class="project-description dark-font">
+                                    A VR puzzle game compatible with Oculus Rift. Throw the ball on trampolines to score within 1 minute.
+                                </p>
+                            </details>
+                            <p class="project-link dark-font">
+                                <a href="https://github.com/bethirahul/Performance-Bounceback">
+                                    GitHub link
+                                </a>
+                            </p>
+                        </article>
                 </section>
-                <div class="whiteSpace"></div>
+                <div class="empty-space"></div>
                 <div class="seperator"></div>
-                <div class="whiteSpace"></div>
+                <div class="empty-space"></div>
                 <footer>
-                    <h4>
-                        Connect with me
+                    <h4 class="dark-font">
+                        My links:
                     </h4>
-                    <p class="myLinks">
+                    <p class="my-links">
                         <a href="https://github.com/bethirahul">GitHub</a>
-                        <a href="www.linkedin.com/in/rahulbethi">LinkedIn</a>
-                        <a href="www.facebook.com">Facebook</a>
+                        <a href="https://www.linkedin.com/in/rahulbethi">LinkedIn</a>
+                        <a href="https://www.facebook.com/rahulbethi">Facebook</a>
                     </p>
                 </footer>
             </main>
