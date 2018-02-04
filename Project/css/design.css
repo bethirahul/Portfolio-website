@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #2d3c49;
+}
+.dark-font {
+    color: #2d3c49;
+}
+.light-font {
+    color: #7d97ad;
+}
+h1, h2, h3, h4, p, figure {
+    margin:0;
+    padding:0;
+}
+img {
+    width: 100%;
+    vertical-align: middle;
+}
+.total-page {
+    display: grid;
+    grid-template-columns: auto minmax(auto, 225mm) auto;
+}
+.main-page {
+    padding: 2%;
+    grid-column: 2/3;
+    background-color: #eeeeee;
+}
+header {
+    display: grid;
+    grid-template-columns: minmax(40mm, 50mm) auto;
+    grid-template-rows: auto auto auto;
+}
+figure {
+    text-align: center;
+}
+.my-photo {
+    grid-row: 1/4;
+}
+.my-name {
+    grid-row: 2;
+    font-size: 225%;
+    padding-left: 5%;
+    padding-right: 3.5%;
+    text-align: right;
+}
+.nick-name {
+    grid-row: 3;
+    font-size: 150%;
+    padding-left: 5%;
+    padding-right: 3.5%;
+    padding-top: 1.5mm;
+    padding-bottom: 2mm;
+    text-align: right;
+}
+.empty-space {
+    padding: 1.5mm;
+}
+.seperator {
+    padding: 0.66mm;
+    background-color: #7d97ad;
+}
+.cover-photo {
+    max-height: 60mm;
+    overflow: hidden;
+}
+.featured-heading {
+    font-weight: normal;
+    font-size: 175%;
+    padding-left: 1.5%;
+    padding-top: 5mm;
+}
+.remaining-heading {
+    font-size: 160%;
+    padding-top: 5mm;
+    text-align: center;
+}
+.projects {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+.project {
+    padding: 1%;
+    padding-top: 5mm;
+    flex-basis: 67mm;
+}
+.project-image {
+    max-width: 100%;
+}
+.project-name {
+    padding-top: 1.5mm;
+    padding-bottom: 1mm;
+    font-weight: normal;
+    text-align: center;
+    font-size: 150%;
+    word-wrap: break-word;
+}
+.project-details, .project-description {
+    padding-bottom: 1mm;
+    text-align: center;
+    word-wrap: break-word;
+    font-size: 95%
+}
+.project-link {
+    padding-bottom: 1mm;
+    text-align: center;
+    font-size: 90%;
+}
+.my-links {
+    padding-top: 2mm;
+    font-size: 95%;
+}
+a:hover {
+    text-decoration-color: none;
+    background-color: #cee8ff;
+    color: rgb(0, 97, 37);
+}
