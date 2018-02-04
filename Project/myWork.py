@@ -4,8 +4,8 @@ class Project():
     def __init__(
         self,
         name,
-        image_path,
-        youtube_url,
+        img_path,
+        vid_url,
         details,
         doc_name,
         doc_url,
@@ -14,11 +14,11 @@ class Project():
     ):
         """ This function is called
             when an instance of the Project class is called """
-        self.name        = name
-        self.image_path  = image_path
-        self.youtube_url = youtube_url
-        self.details     = details
-        self.doc_name    = doc_name
-        self.doc_url     = doc_url
-        self.src_name    = src_name
-        self.src_url     = src_url
+        self.name     = name
+        self.img_path = img_path
+        self.vid_url  = vid_url
+        self.details  = details
+        self.doc_name = doc_name
+        self.doc_url  = doc_url
+        self.src_name = src_name
+        self.src_url  = src_url
