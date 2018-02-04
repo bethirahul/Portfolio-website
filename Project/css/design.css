@@ -72,6 +72,7 @@ figure {
 .remaining-heading {
     font-size: 160%;
     padding-top: 5mm;
+    padding-bottom: 3mm;
     text-align: center;
 }
 .projects {
