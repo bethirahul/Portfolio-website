@@ -7,10 +7,8 @@ class Project():
         img_path,
         vid_url,
         details,
-        doc_name,
-        doc_url,
-        src_name,
-        src_url
+        num_of_links,
+        links
     ):
         """ This function is called
             when an instance of the Project class is called """

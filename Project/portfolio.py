@@ -2,7 +2,7 @@ import webbrowser
 import os
 
 # main page
-main_content ="""
+main_content ='''
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -107,10 +107,10 @@ main_content ="""
         </div>
     </body>
 </html>
-"""
+'''
 
 # project
-proj = """
+proj = '''
 <article class="project">
     {vid_or_img}
     <h3 class="project-name dark-font">
@@ -123,25 +123,25 @@ proj = """
     </details>
     {links}
 </article>
-"""
+'''
 
-proj_vid = """
+proj_vid = '''
 <a
     href="{vid_url}"
     rel="noopener noreferrer"
     target="_blank">
     {img}
 </a>
-"""
+'''
 
-proj_img = """
+proj_img = '''
 <img
     class="project-image"
     src="{img_path}"
     alt="{proj_name} Image">
-"""
+'''
 
-proj_link = """
+proj_link = '''
 <p class="project-link dark-font">
     <a
         href="{link_url}"
@@ -150,15 +150,37 @@ proj_link = """
         {link_name}
     </a>
 </p>
-"""
+'''
 
 
-def create_and_open_website():
+def create_and_open_website(projects):
+    # adding all content
+    projects_content = ''
+    for project in projects:
+        img_content = proj_img.format(
+            img_path = project.img_path,
+            proj_name = project.name
+        )
+        vid_or_img_content = ''
+        if project.vid_url != '':
+            vid_content = proj_vid.format(
+                vid_url = project.vid_url,
+                img = img_content
+            )
+            vid_or_img_content = vid_content
+        else:
+            vid_or_img_content = img_content
+        
+
+    content = main_content.format(
+        projects = temp
+    )
+
     # Create or overwrite the output file
     output_file = open('portfolio.html', 'w')
 
     # Output the file
-    output_file.write(main_content)
+    output_file.write(content)
     output_file.close()
 
     # open the output file in the browser (in a new tab, if possible)
