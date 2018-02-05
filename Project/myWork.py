@@ -7,16 +7,14 @@ class Project():
         img_path,
         vid_url,
         details,
-        num_of_links,
-        links
+        *link_args
     ):
         """ This function is called
             when an instance of the Project class is called """
-        self.name     = name
-        self.img_path = img_path
-        self.vid_url  = vid_url
-        self.details  = details
-        self.doc_name = doc_name
-        self.doc_url  = doc_url
-        self.src_name = src_name
-        self.src_url  = src_url
+        self.name      = name
+        self.img_path  = img_path
+        self.vid_url   = vid_url
+        self.details   = details
+        self.link_args = []
+        for link_arg in link_args:
+            self.link_args.append(link_arg)

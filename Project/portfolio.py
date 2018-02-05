@@ -1,9 +1,8 @@
 import webbrowser
 import os
 
-# main page
-main_content ='''
-<!DOCTYPE html>
+# Website content
+main_content ='''<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -36,8 +35,7 @@ main_content ='''
                 <h2 class="featured-heading light-font">
                     Featured Work
                 </h2>
-                <section class="projects">
-                    {projects}
+                <section class="projects">{projects}
                 </section>
                 <h3 class="remaining-heading light-font">
                     -- Remaining --
@@ -48,15 +46,14 @@ main_content ='''
                             <img
                                 class="project-image"
                                 src="img/github.png"
-                                alt="Performance Bounceback Image">
+                                alt="GitHub profile Image">
                         <!--</figure>-->
                         <h3 class="project-name dark-font">
                             Other Projects
                         </h3>
                         <!--<details class="project-details dark-font">-->
                             <p class="project-description dark-font">
-                                Some of my other projects done during my 
-                                masters at Texas A&M University
+                                Some of my other projects
                             </p>
                         <!--</details>-->
                         <p class="project-link dark-font">
@@ -109,31 +106,31 @@ main_content ='''
 </html>
 '''
 
-# project
+# Each project content
 proj = '''
-<article class="project">
-    {vid_or_img}
+<article class="project">{vid_or_img}
     <h3 class="project-name dark-font">
         {proj_name}
     </h3>
     <details class="project-details dark-font">
+        <summary>Summary</summary>
         <p class="project-description dark-font">
             {details}
         </p>
-    </details>
-    {links}
+    </details>{links}
 </article>
 '''
 
+# Video content
 proj_vid = '''
 <a
     href="{vid_url}"
     rel="noopener noreferrer"
-    target="_blank">
-    {img}
+    target="_blank">{img}
 </a>
 '''
 
+# Image content
 proj_img = '''
 <img
     class="project-image"
@@ -141,6 +138,7 @@ proj_img = '''
     alt="{proj_name} Image">
 '''
 
+# Each Link content
 proj_link = '''
 <p class="project-link dark-font">
     <a
@@ -154,26 +152,56 @@ proj_link = '''
 
 
 def create_and_open_website(projects):
-    # adding all content
+    # content for all projects
     projects_content = ''
+    j = 0
     for project in projects:
-        img_content = proj_img.format(
+        # content for each project
+        print("_____________________________________________________________")
+        print("Project {}".format(j+1))
+
+        # image
+        vid_or_img_content = proj_img.format(
             img_path = project.img_path,
             proj_name = project.name
-        )
-        vid_or_img_content = ''
-        if project.vid_url != '':
-            vid_content = proj_vid.format(
+        ) 
+        # video
+        if project.vid_url != None:
+            vid_or_img_content = proj_vid.format(
                 vid_url = project.vid_url,
-                img = img_content
+                img = vid_or_img_content
             )
-            vid_or_img_content = vid_content
-        else:
-            vid_or_img_content = img_content
-        
+        print("---------------------------------------------------------")
+        print("Video/Image content >>")
+        print(vid_or_img_content)
 
+        # content for all links
+        links_content = ''
+        if len(project.link_args) > 1:
+            i = 0
+            while i < len(project.link_args):
+                # content for each link
+                links_content += proj_link.format(
+                    link_url = project.link_args[i+1],
+                    link_name = project.link_args[i]
+                )
+                i = i + 2
+            print("---------------------------------------------------------")
+            print("Links content >>")
+            print(links_content)
+        
+        # inserting created project contents
+        projects_content += proj.format(
+            vid_or_img = vid_or_img_content,
+            proj_name = project.name,
+            details = project.details,
+            links = links_content
+        )
+        j = j + 1
+
+    # inserting all projects into website
     content = main_content.format(
-        projects = temp
+        projects = projects_content
     )
 
     # Create or overwrite the output file
